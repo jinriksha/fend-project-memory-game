@@ -32,10 +32,10 @@ let shuffledCards = shuffle(cards);
 
 const deck = document.querySelector('.deck');
 
-for (element of shuffledCards) {
+for (item of shuffledCards) {
   let card = document.createElement('li');
   card.classList.add('card');
-  card.innerHTML = "<i class='" + element + "'></i>";
+  card.innerHTML = "<i class='" + item + "'></i>";
   deck.append(card);
 }
 
