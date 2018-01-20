@@ -1,11 +1,16 @@
-const openCards = [];
-const numberOfMoves =
-
 /*
  * Create a list that holds all of your cards
  */
 
-let cards = [
+const cards = [
+  'fa-diamond',
+  'fa-paper-plane-o',
+  'fa-anchor',
+  'fa-bolt',
+  'fa-cube',
+  'fa-leaf',
+  'fa-bicycle',
+  'fa-bomb',
   'fa-diamond',
   'fa-paper-plane-o',
   'fa-anchor',
@@ -23,7 +28,16 @@ let cards = [
  *   - add each card's HTML to the page
  */
 
-let deck = shuffle(cards);
+let shuffledCards = shuffle(cards);
+
+const deck = document.querySelector('.deck');
+
+for (element of shuffledCards) {
+  let card = document.createElement('li');
+  card.classList.add('card');
+  card.innerHTML = "<i class='" + element + "'></i>";
+  deck.append(card);
+}
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
